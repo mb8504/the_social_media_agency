@@ -9,7 +9,7 @@ function Navbar() {
     };
 
     return (
-        <section className='mt-10'>
+        <section className='mt-4 mb-4'>
             <nav className='siteContainer flex flex-row justify-between'>
                 <div className='text-xl'>Social Media Agency</div>
 
