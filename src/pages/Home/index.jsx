@@ -1,10 +1,12 @@
 import React from 'react'
-import Header from '../Home/components/Header'
+import Header from './components/ImageSlider'
+import ImageSlider from './components/ImageSlider'
 
 function Home() {
+
   return (
     <>
-        <Header/>        
+        <ImageSlider/>      
     </>
   )
 }
