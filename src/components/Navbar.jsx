@@ -17,7 +17,7 @@ function Navbar() {
                     {!nav ? <AiOutlineMenu className='text-black' size={40} /> : <AiOutlineCloseCircle className='' size={40} />}
                 </button>
 
-                <div id='mobile' className={`fixed top-0 w-[65%] h-full bg-black bg-opacity-90 transition-right duration-300 ease-in-out ${nav ? 'right-0' : 'right-[-100%]'}`}>
+                <div id='mobile' className={`fixed top-0 w-[65%] h-full bg-black bg-opacity-90 transition-right duration-300 ease-in-out z-40 ${nav ? 'right-0' : 'right-[-100%]'}`}>
                     <ul className='flex flex-col uppercase text-sm text-white p-4 mt-16'>
                         <li className='my-2'>Home</li>
                         <li className='my-2'>Services</li>

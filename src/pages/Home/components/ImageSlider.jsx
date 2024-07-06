@@ -6,18 +6,9 @@ function ImageSlider() {
 
   return (
     <section className="relative w-full h-screen">
-      <div className="video-container relative">
+      <div className="video-container relative z-10">
         <video className="w-full h-full object-cover" src="src/assets/influencer.mp4" autoPlay muted loop></video>
-        
-        {/* Left Arrow */}
-        <div id='leftArrow' className='absolute left-14 top-1/2 transform -translate-y-1/2 cursor-pointer text-white rounded-full bg-black/20'>
-          <BsChevronCompactLeft size={50} />
-        </div>
 
-        {/* Right Arrow */}
-        <div id='rightArrow' className='absolute right-5 top-1/2 transform -translate-y-1/2 cursor-pointer text-white'>
-          <BsChevronCompactRight size={50} />
-        </div>
 
         {/* Text and Button Container */}
         <div className="lgBreak absolute md:top-3/4 top-2/4 w-full text-center text-white">
