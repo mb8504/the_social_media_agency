@@ -1,86 +1,36 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
-import { RxDotFilled } from 'react-icons/rx';
 
-const MediaSlider = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const videoRef = useRef(null);
-    const sliderRef = useRef(null);
+function ImageSlider() {
 
-    const media = [
-        { type: 'video', src: 'src/assets/influencer.mp4' },
-        { type: 'image', src: 'src/assets/img1.jpg' },
-        { type: 'image', src: 'src/assets/img2.jpeg' },
-        // Add more media objects as needed
-    ];
 
-    const totalSlides = media.length;
-
-    const nextSlide = () => {
-        setCurrentSlide((currentSlide + 1) % totalSlides);
-    };
-
-    const prevSlide = () => {
-        setCurrentSlide((currentSlide - 1 + totalSlides) % totalSlides);
-    };
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentSlide((currentSlide + 1) % totalSlides);
-        }, 10000); // Adjust this interval as needed (in milliseconds)
-
-        return () => clearInterval(interval);
-    }, [currentSlide]);
-
-    useEffect(() => {
-        if (media[currentSlide].type === 'video' && videoRef.current) {
-            videoRef.current.play();
-        }
-        // Adjust slider height based on current media type
-        const sliderHeight = sliderRef.current.clientHeight;
-        sliderRef.current.style.height = `${sliderHeight}px`;
-    }, [currentSlide]);
-
-    return (
-        <div ref={sliderRef} className="slider relative w-full h-auto">
-            {/* <button onClick={prevSlide} className="absolute left-0 p-2 bg-gray-200">
-                <BsChevronCompactLeft size={24} />
-            </button> */}
-            <div className="w-full h-full flex justify-center items-center">
-                {media[currentSlide].type === 'image' ? (
-                    <img 
-                        src={media[currentSlide].src} 
-                        alt={`Slide ${currentSlide}`} 
-                        className="w-full h-full object-cover" 
-                    />
-                ) : (
-                    <video 
-                        ref={videoRef} 
-                        autoPlay 
-                        muted 
-                        loop 
-                        className="w-full h-full object-cover"
-                    >
-                        <source src={media[currentSlide].src} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                )}
-            </div>
-            {/* <button onClick={nextSlide} className="absolute right-0 p-2 bg-gray-200">
-                <BsChevronCompactRight size={24} />
-            </button> */}
-            <div className="absolute bottom-0 left-0 right-0 flex justify-center p-2">
-                {media.map((_, index) => (
-                    <RxDotFilled
-                        key={index}
-                        size={24}
-                        className={`mx-1 cursor-pointer ${index === currentSlide ? 'text-blue-500' : 'text-gray-500'}`}
-                        onClick={() => setCurrentSlide(index)}
-                    />
-                ))}
-            </div>
+  return (
+    <section className="relative w-full h-screen">
+      <div className="video-container relative">
+        <video className="w-full h-full object-cover" src="src/assets/influencer.mp4" autoPlay muted loop></video>
+        
+        {/* Left Arrow */}
+        <div id='leftArrow' className='absolute left-14 top-1/2 transform -translate-y-1/2 cursor-pointer text-white rounded-full bg-black/20'>
+          <BsChevronCompactLeft size={50} />
         </div>
-    );
-};
 
-export default MediaSlider;
+        {/* Right Arrow */}
+        <div id='rightArrow' className='absolute right-5 top-1/2 transform -translate-y-1/2 cursor-pointer text-white'>
+          <BsChevronCompactRight size={50} />
+        </div>
+
+        {/* Text and Button Container */}
+        <div className="lgBreak absolute md:top-3/4 top-2/4 w-full text-center text-white">
+          <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4">
+            Build your presence.
+          </div>
+          <button className="px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-black bg-opacity-50 rounded-md text-white text-sm sm:text-base md:text-lg lg:text-xl">
+            Learn How
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default ImageSlider;
