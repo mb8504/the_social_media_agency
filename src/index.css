@@ -10,38 +10,9 @@
     align-items: center;
 }
 
-.slider video {
-  max-width: 100%;
-  height: auto;
-}
-
-.slider img {
-  max-width: 100%;
-  height: auto;
-}
-
-  
-
-/* for header carousel on homepage */
-@media (min-width: 1152px) {
-  .lgBreak {
-    top: 75%;
-    transform: translateY(-50%);
-  }
-}
-
-/* for header carousel on homepage */
-@media (min-width: 768px) {
-  .lgBreak {
-    top: 75%;
-    transform: translateY(-50%);
-  }
-}
-
 /* for header carousel on homepage */
 @media (min-width: 375px) {
-  .lgBreak {
+  .smHeaderBreak {
     top: 65%;
-    transform: translateY(-50%);
   }
 }
