@@ -6,17 +6,28 @@ function ImageSlider() {
     {
       type: 'video',
       src: '/influencer.mp4',
-      heightClass: '',
+      content: {
+        text: 'Build your presence.',
+        button: 'Learn How',
+      },
     },
     {
       type: 'image',
       src: '/img1.png',
-      heightClass: '',
+      content: {
+        text: 'Grow your business.',
+        button: 'Learn How',
+      },
     },
     {
       type: 'image',
       src: '/img2.png',
-      heightClass: '',
+      content: {
+        text: 'State of Social 2024',
+        subtext: 'Your Guide to\nGrowing Your Business\nwith Social',
+        button: 'Download',
+      },
+      customClass: 'left-custom',
     },
   ];
 
@@ -55,16 +66,29 @@ function ImageSlider() {
           <img className="w-full h-full object-cover" src={slides[currentIndex].src} alt="Slide" />
         )}
 
-        {/* Text and Button Container */}
-        <div className="smHeaderBreak absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center text-white">
-          <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4">
-            Build your presence.
+        {/* Text and Button Container slide 1 */}
+        {slides[currentIndex].content && (
+          <div className={`${slides[currentIndex].customClass} smHeaderBreak absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center text-white ${currentIndex === 2 ? 'left-custom' : ''}`}>
+            <div className="siteContainer text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 leftHeader">
+              {slides[currentIndex].content.text}
+            </div>
+
+            {slides[currentIndex].content.subtext && (
+              <div className="siteContainer text-lg sm:text-xl md:text-2xl lg:text-3xl mb-4 text-left subtextLeft">
+                {slides[currentIndex].content.subtext.split('\n').map((line, index) => (
+                  <div key={index}>{line}</div>
+                ))}
+              </div>
+            )}
+            <div id='buttonContainer' className='siteContainer'>
+              <button className="px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-black bg-opacity-50 rounded-md text-white text-sm sm:text-base md:text-lg lg:text-xl buttonLeft">
+                {slides[currentIndex].content.button}
+              </button>
+            </div>
           </div>
-          <button className="px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-black bg-opacity-50 rounded-md text-white text-sm sm:text-base md:text-lg lg:text-xl">
-            Learn How
-          </button>
-        </div>
+        )}
       </div>
+
 
       {/* DOTS */}
       <div className='flex top-4 justify-center py-2'>

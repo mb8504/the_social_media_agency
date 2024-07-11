@@ -10,9 +10,56 @@
     align-items: center;
 }
 
+.leftHeader {
+  
+}
+
+.left-custom {
+  text-align: left; /* Adjust this value to your preference */
+
+}
+
+.subtextLeft {
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+.buttonLeft {
+
+}
+
+
 /* for header carousel on homepage */
 @media (min-width: 375px) {
   .smHeaderBreak {
-    top: 65%;
+    top: 55%;
+  }
+  /* .leftHeader {
+    font-size: 1rem;
+  }
+  .subtextLeft {
+    font-size: 0.7rem;
+    line-height: 1.5;
+    padding-bottom: 0.5rem;
+  }
+  .buttonLeft {
+
+  } */
+}
+
+@media (max-width: 430px) {
+  .leftHeader {
+    font-size: 1rem;
+  }
+  .subtextLeft {
+    font-size: 0.7rem;
+    line-height: 1.5;
+    padding-bottom: 0.5rem;
+  }
+  .buttonLeft {
+
   }
 }
+
+
+
