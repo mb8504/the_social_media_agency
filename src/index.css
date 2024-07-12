@@ -11,12 +11,11 @@
 }
 
 .leftHeader {
-  
+  margin-bottom: 1rem;
 }
 
 .left-custom {
   text-align: left; /* Adjust this value to your preference */
-
 }
 
 .subtextLeft {
@@ -34,6 +33,10 @@
   .smHeaderBreak {
     top: 55%;
   }
+  .subtextLeft {
+    margin-bottom: 1rem;
+  }
+
   /* .leftHeader {
     font-size: 1rem;
   }
