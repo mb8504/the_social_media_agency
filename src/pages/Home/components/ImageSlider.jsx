@@ -69,14 +69,20 @@ function ImageSlider() {
         {/* Text and Button Container slide 1 */}
         {slides[currentIndex].content && (
           <div className={`${slides[currentIndex].customClass} smHeaderBreak absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center text-white ${currentIndex === 2 ? 'left-custom' : ''}`}>
-            <div className="siteContainer text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 leftHeader">
+            <div className={`siteContainer text-2xl sm:text-3xl md:text-4xl lg:text-5xl ${currentIndex === 2 ? 'leftHeader' : 'mb-4'}`}>
               {slides[currentIndex].content.text}
             </div>
 
             {slides[currentIndex].content.subtext && (
               <div className="siteContainer text-lg sm:text-xl md:text-2xl lg:text-3xl mb-4 text-left subtextLeft">
                 {slides[currentIndex].content.subtext.split('\n').map((line, index) => (
-                  <div key={index}>{line}</div>
+                  <div key={index}>
+                  {line.split(' ').map((word, idx) => (
+                    <span key={idx} className={word === 'Growing' ? 'text-pink-500 font-bold' : ''}>
+                      {word}{' '}
+                    </span>
+                  ))}
+                </div>
                 ))}
               </div>
             )}

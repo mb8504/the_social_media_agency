@@ -18,6 +18,7 @@
 }
 
 
+
 /* for header carousel on homepage */
 @media (min-width: 375px) {
   .smHeaderBreak {
@@ -27,18 +28,27 @@
     margin-bottom: 0.1rem;
   }
   .leftHeader {
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
   }
 }
 
 @media (max-width: 430px) {
   .leftHeader {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   .subtextLeft {
     font-size: 0.7rem;
     line-height: 1.5;
     padding-bottom: 0.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #buttonContainer {
+    margin-top: 1.5rem;
+  }
+  .leftHeader {
+    margin-bottom: 2rem;
   }
 }
 
