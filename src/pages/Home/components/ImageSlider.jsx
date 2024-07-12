@@ -16,7 +16,7 @@ function ImageSlider() {
       src: '/img1.png',
       content: {
         text: 'Grow your business.',
-        button: 'Learn How',
+        button: 'Start Now',
       },
     },
     {
