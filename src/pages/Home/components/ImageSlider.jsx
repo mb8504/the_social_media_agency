@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { RxDotFilled } from 'react-icons/rx';
 
 function ImageSlider() {
@@ -32,14 +32,21 @@ function ImageSlider() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const intervalRef = useRef(null);
+
+  const resetInterval = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    }, 10000); // Change slide every 10 seconds
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 10000); // Change slide every 5 seconds
-
-    return () => clearInterval(interval);
-  }, [slides.length]);
+    resetInterval();
+    return () => clearInterval(intervalRef.current);
+  }, [currentIndex, slides.length]);
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
