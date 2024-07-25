@@ -1,6 +1,6 @@
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
+@tailwind components;
 
 
 .siteContainer {
@@ -19,7 +19,7 @@
 
 
 
-/* for header carousel on homepage */
+/* START header carousel on homepage */
 @media (min-width: 375px) {
   .smHeaderBreak {
     top: 55%;
@@ -51,5 +51,18 @@
     margin-bottom: 2rem;
   }
 }
+/* END header carousel on homepage */
 
+
+/* START Brands Section */
+@media (min-width: 375px) {
+  .smGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    
+  }
+}
+
+
+/* END Brands Section */
 

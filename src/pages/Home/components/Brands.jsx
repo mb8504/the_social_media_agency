@@ -1,0 +1,23 @@
+import React from 'react'
+
+function Brands() {
+  return (
+    <section>
+        <div className='siteContainer text-center'>
+            <div>
+                Our Clients
+            </div>
+            <ul className='grid lg:grid-cols-6 md:grid-cols-4 smGrid'>
+                <li className='font-sans text-xl'>BioInsights</li>
+                <li className='font-sans text-xl'>BioInsights</li>
+                <li className='font-sans text-xl'>BioInsights</li>
+                <li className='font-sans text-xl'>BioInsights</li>
+                <li className='font-sans text-xl'>BioInsights</li>
+                <li className='font-sans text-xl'>BioInsights</li>
+            </ul>
+        </div>
+    </section>
+  )
+}
+
+export default Brands

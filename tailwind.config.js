@@ -8,6 +8,9 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Roboto', 'sans-serif']
+      },
+      colors: {
+        navBG: '#ff0258',
       }
     },
   },

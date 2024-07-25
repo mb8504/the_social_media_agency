@@ -9,9 +9,9 @@ function Navbar() {
     };
 
     return (
-        <section className='mt-4 mb-4'>
-            <nav className='siteContainer flex flex-row justify-between'>
-                <div className='text-xl'>Social Media Agency</div>
+        <section className='bg-navBG'>
+            <nav className='siteContainer flex flex-row justify-between text-white'>
+                <div className='text-xl pt-5 pb-5'>Social Media Agency</div>
 
                 <button onClick={handleNav} className='z-50 text-white md:max-xl:hidden lg:hidden xl:hidden 2xl:hidden'>
                     {!nav ? <AiOutlineMenu className='text-black' size={40} /> : <AiOutlineCloseCircle className='' size={40} />}

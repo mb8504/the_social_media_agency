@@ -3,9 +3,10 @@ import { RxDotFilled } from 'react-icons/rx';
 
 function ImageSlider() {
   const slides = [
+    // when ready replace image type with video and src with /influencer.mp4
     {
-      type: 'video',
-      src: '/influencer.mp4',
+      type: 'image',
+      src: '/img0.png',
       content: {
         text: 'Build your presence.',
         button: 'Learn How',
@@ -85,7 +86,7 @@ function ImageSlider() {
                 {slides[currentIndex].content.subtext.split('\n').map((line, index) => (
                   <div key={index}>
                   {line.split(' ').map((word, idx) => (
-                    <span key={idx} className={word === 'Growing' ? 'text-pink-500 font-bold' : ''}>
+                    <span key={idx} className={word === 'Growing' ? 'text-navBG font-bold' : ''}>
                       {word}{' '}
                     </span>
                   ))}
